@@ -15,8 +15,8 @@ export class Validator{
     }
 
     //Static type checks
-    public static isDefined = x => x !== undefined && x !== null;
-    public static isUndefined = x => x === undefined;
+    public static isDefined = (x: any) => x !== undefined && x !== null;
+    public static isUndefined = (x: any) => x === undefined;
     public static isArray = Array.isArray;
     public static isString = ( x: any ) => (typeof x === 'string' || x instanceof String);
     public static isObject = ( x: {} ) => Object.prototype.toString.call(x) === "[object Object]";
