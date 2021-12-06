@@ -1,11 +1,11 @@
 @Description
-	- This is the global validation schema. if there's application specified validation needed. Extend this class instead of adding into it.
+- This is the global validation schema. if there's application specified validation needed. Extend this class instead of adding into it.
 
 @Usage
-	- import { Validator } from <path to validator.ts>
-	- const validator = new Validator()
-	- validator.value(<input value>).<chain()>.<chain()>....valid()
-	- validator.errors to check if has errors
+- import { Validator } from <path to validator.ts>
+- const validator = new Validator()
+- validator.value(<input value>).<chain()>.<chain()>....valid()
+- validator.errors to check if has errors
 
 @Example
 
