@@ -156,6 +156,7 @@ export class Validator{
 			labelEn: "Value not same",
 			labelJpn: "再確認できませんでした"
 		})
+        return this
 	}
     
     public valid(returnErrors: boolean = false): boolean | Error[]{
