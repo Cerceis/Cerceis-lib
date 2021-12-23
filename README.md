@@ -1,4 +1,5 @@
-# A Quality of life library (Cerceis-Library, known as CLIB).
+# Cerceis-Library (known as CLIB).
+A Quality of life library
 - Contains list of quality of life functions that is written in TypeScript and es6.
 - Module
 - Author: Cerceis
