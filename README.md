@@ -9,14 +9,14 @@ A Quality of life library
 
 |Name|Status|Documentation|Description|
 |--|--|--|--| 
-|CopyToClipboard|Completed|x| Copy string into clipboard.
-|GenerateObjectId|Completed|x| Returns a new ObjectId.
+|CopyToClipboard|Completed|o| Copy string into clipboard.
+|GenerateObjectId|Completed|o| Returns a new ObjectId.
 |GetLargest|Completed|o| Return the largest N numbers from an arary..
-|GetRandomElement|Completed|x| Returns a random element in an array.
-|GetSmallest|Completed|x| Return the smallest N numbers from an arary.
+|GetRandomElement|Completed|o| Returns a/multiple random element in an array.
+|GetSmallest|Completed|o| Return the smallest N numbers from an arary.
 |KMeans|Completed|x| Group arrays of numbers into cluster with k-means algorithm.
-|Logger|Completed|x| A better console.log with color and timestamp included.
-|MinMaxScaler|Completed|x| Scale value down to range between 0 ~ 1.
+|Logger|Completed|o| A better console.log with color and timestamp included.
+|MinMaxScaler|Completed|o| Scale value down to range between 0 ~ 1.
 |ParseCookie|Completed|x| Takes http cookie string as input and turn it into an object.
 |RandomAlphanum|Completed|x| Generates a random alphanumeric string.
 |RandomInt|Completed|x| Generates a random integer from range.

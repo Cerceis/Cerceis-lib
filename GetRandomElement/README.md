@@ -1,6 +1,13 @@
-@Description
-- Get random N numbers of element from the given array.
-    
-@Params
-- arr: number<required>: Input array.
-- noOfResult: number<default=1>: Number of random element return.
+# GetRandomElement
+
+## Description
+Returns a/multiple random element in an array.
+
+## Params
+|Name|Type|Default|Required|Description|
+|--|--|--|--|--|
+|arr|any[]|N/A|o|Array of input numbers.|
+|noOfResult|number|1|x|Number of results to return.|
+
+## Return 
+any[]
