@@ -169,4 +169,7 @@ export class Validator{
         if(this.errors.length > 0) return returnErrors ? this.errors : false
         else return true
     }
+
+    public hasError(): boolean{return this.errors.length > 0 ? true : false;}
+    
 }

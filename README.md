@@ -24,7 +24,7 @@ A Quality of life library
 |ShuffleArray|In Progress|x| Shuffles an array.
 |StringPadding|Completed|x| Adds suffix or prefix with desired padding to certain length to a string.
 |TimeConverter|Completed|x| List of functions that convert time into a single unit. (Ex: 18:45:55 to miliseconds, etc)
-|Validator|Completed|x| A value validator, mostly used in form validation.
+|Validator|Completed|o| A value validator, mostly used in form validation.
 
 ## Versions:
 |Version|Date|Description|
