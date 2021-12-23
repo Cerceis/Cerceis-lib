@@ -10,6 +10,7 @@ A Quality of life library
 |Name|Status|Documentation|Description|
 |--|--|--|--| 
 |CopyToClipboard|Completed|o| Copy string into clipboard.
+|ExtractObjProp|In Progress|x| From an array of objects, extract certain property from
 |GenerateObjectId|Completed|o| Returns a new ObjectId.
 |GetLargest|Completed|o| Return the largest N numbers from an arary..
 |GetRandomElement|Completed|o| Returns a/multiple random element in an array.
@@ -20,13 +21,17 @@ A Quality of life library
 |ParseCookie|Completed|x| Takes http cookie string as input and turn it into an object.
 |RandomAlphanum|Completed|x| Generates a random alphanumeric string.
 |RandomInt|Completed|x| Generates a random integer from range.
+|ShuffleArray|In Progress|x| Shuffles an array.
 |StringPadding|Completed|x| Adds suffix or prefix with desired padding to certain length to a string.
 |TimeConverter|Completed|x| List of functions that convert time into a single unit. (Ex: 18:45:55 to miliseconds, etc)
 |Validator|Completed|x| A value validator, mostly used in form validation.
-
 
 ## Versions:
 |Version|Date|Description|
 |--|--|--|
 |1.2|2012-12-23|Added TomeConverter, KMeans StringPadding|
 |1.1|2012-12-17|Added Logger, CopyToClipboard, several readme.md.|
+
+## FAQ
+- There is an old version of cerceisLib, what are the difference ?  
+    There's one written 2 years ago, althought it still can be used, but it's not recommended. I will be gradually migrating most of the functions to this newer version.

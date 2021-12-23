@@ -158,7 +158,13 @@ export class Validator{
 		})
         return this
 	}
-    
+    public verify(returnErrors: boolean = false): boolean | Error[]{
+        if(this.errors.length > 0) return returnErrors ? this.errors : false
+        else return true
+    }
+    /*
+        @deprecated Since v1.3. Use "verify" instead.
+    */
     public valid(returnErrors: boolean = false): boolean | Error[]{
         if(this.errors.length > 0) return returnErrors ? this.errors : false
         else return true
