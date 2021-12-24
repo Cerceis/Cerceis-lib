@@ -1,18 +1,11 @@
 export class Validator {
-    inputValue;
-    errors = [];
+    constructor() {
+        this.errors = [];
+    }
     value(inputValue) {
         this.inputValue = inputValue;
         return this;
     }
-    //Static type checks
-    static isDefined = (x) => x !== undefined && x !== null;
-    static isUndefined = (x) => x === undefined;
-    static isArray = Array.isArray;
-    static isString = (x) => (typeof x === 'string' || x instanceof String);
-    static isObject = (x) => Object.prototype.toString.call(x) === "[object Object]";
-    static isNumber = (x) => Object.prototype.toString.call(x) === "[object Number]";
-    static isBoolean = (x) => Object.prototype.toString.call(x) === "[object Boolean]";
     min(min) {
         if (!this.inputValue)
             return this;
@@ -160,4 +153,12 @@ export class Validator {
     }
     hasError() { return this.errors.length > 0 ? true : false; }
 }
+//Static type checks
+Validator.isDefined = (x) => x !== undefined && x !== null;
+Validator.isUndefined = (x) => x === undefined;
+Validator.isArray = Array.isArray;
+Validator.isString = (x) => (typeof x === 'string' || x instanceof String);
+Validator.isObject = (x) => Object.prototype.toString.call(x) === "[object Object]";
+Validator.isNumber = (x) => Object.prototype.toString.call(x) === "[object Number]";
+Validator.isBoolean = (x) => Object.prototype.toString.call(x) === "[object Boolean]";
 //# sourceMappingURL=validator.js.map

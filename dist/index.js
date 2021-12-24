@@ -9,6 +9,7 @@ export { MinMaxScaler } from './MinMaxScaler/min-max-scaler.js';
 export { parseCookies } from './ParseCookie/parse-cookie.js';
 export { RandomAlphanum } from './RandomAlphanum/random-alphanum.js';
 export { RandomInt } from './RandomInt/random-int.js';
+export { ShuffleArray } from './ShuffleArray/shuffle-array.js';
 export { StringPadding } from './StringPadding/string-padding.js';
 export * from './TimeConverter/time-converter.js';
 export { Validator } from './Validator/validator.js';

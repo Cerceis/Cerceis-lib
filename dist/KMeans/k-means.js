@@ -18,7 +18,7 @@ export const KMeans = (k = 2, arr, attempts = 1) => {
         let previousCluster = [];
         let i = 0;
         while (CheckIfSameClusterPosition(clusters, previousCluster) === false) {
-            previousCluster = clusters.map(a => { return { ...a }; });
+            previousCluster = clusters.map(a => { return Object.assign({}, a); });
             //Reset childs
             for (let cluster of clusters)
                 cluster.childs = [];
