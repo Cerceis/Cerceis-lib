@@ -12,11 +12,12 @@ A Quality of life library
     const id = GenerateObjectId();
 
 ## List of functions 
-*Documentations located in README.md in the folder of every function  
-
+*Documentation written as JSDoc.
 |Name|Status|Documentation|Description|
 |--|--|--|--| 
+|ObjectToArray|Completed|o| Convert a 2-dimentional array ([[key, value], [key2, value2],...]) into Object.|
 |CopyToClipboard|Completed|o| Copy string into clipboard.
+|GenerateArray|In Progress|x| Generates an array with different types (number, object, string) of desired length.
 |GenerateObjectId|Completed|o| Returns a new ObjectId.
 |GetLargest|Completed|o| Return the largest N numbers from an arary..
 |GetRandomElement|Completed|o| Returns a/multiple random element in an array.
@@ -24,6 +25,8 @@ A Quality of life library
 |KMeans|Completed|x| Group arrays of numbers into cluster with k-means algorithm.
 |Logger|Completed|o| A better console.log with color and timestamp included.
 |MinMaxScaler|Completed|o| Scale value down to range between 0 ~ 1.
+|Obfuscator|Completed|x| Obfuscate strings.
+|ObjectToArray|Completed|o| Convert Object into a 2-dimentional array ([[key, value], [key2, value2],...]).|
 |ParseCookie|Completed|x| Takes http cookie string as input and turn it into an object.
 |RandomAlphanum|Completed|x| Generates a random alphanumeric string.
 |RandomInt|Completed|x| Generates a random integer from range.

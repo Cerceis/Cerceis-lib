@@ -6,6 +6,13 @@ export class Validator {
         this.inputValue = inputValue;
         return this;
     }
+    /**
+     *
+     * @param min Check minimum, if the input value is a string,
+     * it will check it's length. If it's a number, it will check mathematically.
+     * (This does not check for null | undefined ! Use **required()** to check null values. )
+     * @returns {this} this
+     */
     min(min) {
         if (!this.inputValue)
             return this;
@@ -161,4 +168,5 @@ Validator.isString = (x) => (typeof x === 'string' || x instanceof String);
 Validator.isObject = (x) => Object.prototype.toString.call(x) === "[object Object]";
 Validator.isNumber = (x) => Object.prototype.toString.call(x) === "[object Number]";
 Validator.isBoolean = (x) => Object.prototype.toString.call(x) === "[object Boolean]";
+export const validator = new Validator();
 //# sourceMappingURL=validator.js.map

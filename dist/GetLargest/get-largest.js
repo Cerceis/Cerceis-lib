@@ -1,8 +1,8 @@
 /**
  * Find and return the largest n numbers
  * @param numbers Array of numbers.
- * @param n Number of results to return.
- * @param returnIndex Return the index instead of the value.
+ * @param {number} [n] Number of results to return.
+ * @param {boolean} [returnIndex] Return the index instead of the value.
  * @returns Array of largest n number.
  */
 export const GetLargest = (numbers, n = 1, returnIndex = false) => {

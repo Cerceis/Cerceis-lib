@@ -4,7 +4,6 @@ interface Error{
     labelEn: string,
     labelJpn: string
 }
-
 export class Validator{
     public inputValue: any;
     public errors: Error[]= [];
@@ -23,6 +22,13 @@ export class Validator{
     public static isNumber = ( x: number ) => Object.prototype.toString.call(x) === "[object Number]";
     public static isBoolean = ( x: boolean ) => Object.prototype.toString.call(x) === "[object Boolean]";
 
+    /**
+     * 
+     * @param min Check minimum, if the input value is a string, 
+     * it will check it's length. If it's a number, it will check mathematically. 
+     * (This does not check for null | undefined ! Use **required()** to check null values. )
+     * @returns {this} this
+     */
     public min(min: number): this{
         if(!this.inputValue) return this
         if(Validator.isArray(this.inputValue) || Validator.isString(this.inputValue)){
@@ -167,3 +173,4 @@ export class Validator{
     public hasError(): boolean{return this.errors.length > 0 ? true : false;}
     
 }
+export const validator = new Validator();
