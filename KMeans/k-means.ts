@@ -1,5 +1,5 @@
-import { RandomInt } from "../RandomInt/random-int"
-import { GetSmallest } from "../GetSmallest/get-smallest"
+import { RandomInt } from "../RandomInt/random-int.js"
+import { GetSmallest } from "../GetSmallest/get-smallest.js"
 
 interface Cluster{
     id: number,

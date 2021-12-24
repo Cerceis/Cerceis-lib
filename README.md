@@ -29,6 +29,7 @@ A Quality of life library
 ## Versions:
 |Version|Date|Description|
 |--|--|--|
+|1.3||Updated documentation, |
 |1.2|2012-12-23|Added TomeConverter, KMeans StringPadding|
 |1.1|2012-12-17|Added Logger, CopyToClipboard, several readme.md.|
 

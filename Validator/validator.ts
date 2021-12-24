@@ -23,12 +23,6 @@ export class Validator{
     public static isNumber = ( x: number ) => Object.prototype.toString.call(x) === "[object Number]";
     public static isBoolean = ( x: boolean ) => Object.prototype.toString.call(x) === "[object Boolean]";
 
-    public verifyType(inputValue: any): string{
-        if(!this.inputValue) throw "Please provide a value"
-        let type = typeof inputValue
-        return type
-    }
-
     public min(min: number): this{
         if(!this.inputValue) return this
         if(Validator.isArray(this.inputValue) || Validator.isString(this.inputValue)){
@@ -162,8 +156,8 @@ export class Validator{
         if(this.errors.length > 0) return returnErrors ? this.errors : false
         else return true
     }
-    /*
-        @deprecated Since v1.3. Use "verify" instead.
+    /**
+    * @deprecated Since v1.3. Use "verify" instead.
     */
     public valid(returnErrors: boolean = false): boolean | Error[]{
         if(this.errors.length > 0) return returnErrors ? this.errors : false

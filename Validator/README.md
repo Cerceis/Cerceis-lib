@@ -5,7 +5,7 @@ A validator to verify types of a value. Mostly used in form validation.
 
 ## Usage
 ```
-import { Validator } from <path to validator.ts>
+import { Validator } from <path to validator>
 const validator = new Validator()
 
 const form = {
