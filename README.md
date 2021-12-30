@@ -9,8 +9,8 @@ A Quality of life library
 
 ## Usage
 
-    import { GenerateObjectId } from "cerceis-lib";
-    const id = GenerateObjectId();
+    import { CopyToClipboard } from "cerceis-lib";
+    const id = CopyToClipboard("It works!");
 
 
 ## List of functions 
@@ -20,10 +20,6 @@ A Quality of life library
 |ObjectToArray|Completed|o| Convert a 2-dimentional array ([[key, value], [key2, value2],...]) into Object.|
 |CopyToClipboard|Completed|o| Copy string into clipboard.
 |Generate|Completed|o| Generates various kinds of values.(objectId, array, alphanum..etc)
-|GetLargest|Completed|o| Return the largest N numbers from an arary..
-|GetRandomElement|Completed|o| Returns a/multiple random element in an array.
-|GetSmallest|Completed|o| Return the smallest N numbers from an arary.
-|Intersect|Completed|o| Return intersection of two arrays.
 |KMeans|Completed|x| Group arrays of numbers into cluster with k-means algorithm.
 |Logger|Completed|o| A better console.log with color and timestamp included.
 |MinMaxScaler|Completed|o| Scale value down to range between 0 ~ 1.
