@@ -1,5 +1,5 @@
 import { Generate } from "../Generate/generate.js"
-import { GetArray } from "../GetArray/get-array.js"
+import { FromArray } from "../FromArray/from-array.js"
 
 interface Cluster{
     id: number,
@@ -48,7 +48,7 @@ export const KMeans = (
         }
         variationScores.push(variantSum);
     }
-    const smallestVariantScoreIndex: number[] = GetArray.smallest(variationScores, 1, true);
+    const smallestVariantScoreIndex: number[] = FromArray.getSmallest(variationScores, 1, true);
     return variations[smallestVariantScoreIndex[0]]
 }
 
@@ -71,7 +71,7 @@ const CalculteDistances = (clusters: Cluster[], arr: number[]): Cluster[] => {
             const distance: number = Math.abs(cluster.position - point);
             distances.push(distance);
         }
-        const nearestPointIndex: number[] = GetArray.smallest(distances, 1, true);
+        const nearestPointIndex: number[] = FromArray.getSmallest(distances, 1, true);
         //Add point to the cluster
         clusters[nearestPointIndex[0]].childs.push(point)
     })

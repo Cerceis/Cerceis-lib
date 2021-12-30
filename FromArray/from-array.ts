@@ -1,11 +1,11 @@
-export const GetArray = {
+export const FromArray = {
     /**
      * Returns a/multiple random element in an array.
      * @param arr Array of input numbers.
      * @param {number} [noOfResult=1] Number of results to return.
      * @returns 
      */
-    random(arr: any[], noOfResult: number = 1): any[]{
+    getRandom(arr: any[], noOfResult: number = 1): any[]{
         if (!Array.isArray(arr)) throw "Input must be an array"
         const result = []
         for (let i = 0; i < noOfResult; i++)
@@ -19,7 +19,7 @@ export const GetArray = {
      * @param {boolean} [returnIndex] Return the index instead of the value.
      * @returns Array of largest n number.
      */
-    largest(numbers: number[], n: number = 1, returnIndex: boolean = false): number[]{
+    getLargest(numbers: number[], n: number = 1, returnIndex: boolean = false): number[]{
         //Usually sort is not good at this, but in this situation it's better to use sort.
         const results: number[] = [];
         if(returnIndex){
@@ -44,7 +44,7 @@ export const GetArray = {
      * @param {boolean} [returnIndex=false] Return the index instead of the value.
      * @returns Array of smallest n number.
      */
-    smallest(numbers: number[], n: number = 1, returnIndex: boolean = false): number[]{
+    getSmallest(numbers: number[], n: number = 1, returnIndex: boolean = false): number[]{
         //Usually sort is not good at this, but in this situation it's better to use sort.
         const results: number[] = [];
         if(returnIndex){
@@ -69,7 +69,7 @@ export const GetArray = {
      * @param duplicated Return duplicated results.
      * @returns any[]
      */
-    intersect(
+    getIntersect(
         arrA: any[], 
         arrB: any[], 
         duplicated: boolean = false 
@@ -87,6 +87,20 @@ export const GetArray = {
             }
             else if(_map[arrB[i]]) result.push(arrB[i])
         return result;
+    },
+    /**
+     * Randomly shuffle an Array. Based on anwser by https://stackoverflow.com/questions/2450954/
+     * @param arr Array to shuffle.
+     * @returns Shuffled array.
+     */
+    shuffle(arr: any[]):any[]{
+        let currentIndex = arr.length, randomIndex;
+        while (currentIndex != 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+        }
+        return arr;
     }
 }
 

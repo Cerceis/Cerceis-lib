@@ -17,8 +17,9 @@ A Quality of life library
 *Documentation written as JSDoc.
 |Name|Status|Documentation|Description|
 |--|--|--|--| 
-|ObjectToArray|Completed|o| Convert a 2-dimentional array ([[key, value], [key2, value2],...]) into Object.|
+|ArrayToObject|Completed|o| Convert a 2-dimentional array ([[key, value], [key2, value2],...]) into Object.|
 |CopyToClipboard|Completed|o| Copy string into clipboard.
+|FromArray|Completed|o| Various functions to manipulate array. (Shuffle, intersect, smallest, random, etc...)
 |Generate|Completed|o| Generates various kinds of values.(objectId, array, alphanum..etc)
 |KMeans|Completed|x| Group arrays of numbers into cluster with k-means algorithm.
 |Logger|Completed|o| A better console.log with color and timestamp included.
@@ -27,8 +28,6 @@ A Quality of life library
 |ObjectToArray|Completed|o| Convert Object into a 2-dimentional array ([[key, value], [key2, value2],...]).|
 |ParseCookie|Completed|x| Takes http cookie string as input and turn it into an object.
 |Sha256|Completed|x| Hash strings using SHA256.
-|ShuffleArray|Completed|o| Shuffles an array.
-|StringPadding|Completed|x| Adds suffix or prefix with desired padding to certain length to a string.
 |TimeConverter|Completed|x| List of functions that convert time into a single unit. (Ex: 18:45:55 to miliseconds, etc)
 |Validator|Completed|o| A value validator, mostly used in form validation.
 
