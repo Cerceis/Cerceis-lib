@@ -1,5 +1,5 @@
-import { RandomInt } from "../RandomInt/random-int.js";
-import { GetSmallest } from "../GetSmallest/get-smallest.js";
+import { Generate } from "../Generate/generate.js";
+import { GetArray } from "../GetArray/get-array.js";
 export const KMeans = (k = 2, arr, attempts = 1) => {
     if (arr.length === 0)
         throw "Empty array.";
@@ -12,7 +12,7 @@ export const KMeans = (k = 2, arr, attempts = 1) => {
         for (let i = 0; i < k; i++)
             clusters.push({
                 id: i + 1,
-                position: RandomInt(min, max + 1),
+                position: Generate.int(min, max + 1),
                 childs: []
             });
         let previousCluster = [];
@@ -39,7 +39,7 @@ export const KMeans = (k = 2, arr, attempts = 1) => {
         }
         variationScores.push(variantSum);
     }
-    const smallestVariantScoreIndex = GetSmallest(variationScores, 1, true);
+    const smallestVariantScoreIndex = GetArray.smallest(variationScores, 1, true);
     return variations[smallestVariantScoreIndex[0]];
 };
 const CheckIfSameClusterPosition = (clusters, previousCluster) => {
@@ -61,7 +61,7 @@ const CalculteDistances = (clusters, arr) => {
             const distance = Math.abs(cluster.position - point);
             distances.push(distance);
         }
-        const nearestPointIndex = GetSmallest(distances, 1, true);
+        const nearestPointIndex = GetArray.smallest(distances, 1, true);
         //Add point to the cluster
         clusters[nearestPointIndex[0]].childs.push(point);
     });

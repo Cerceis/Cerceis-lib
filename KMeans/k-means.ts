@@ -1,5 +1,5 @@
-import { RandomInt } from "../RandomInt/random-int.js"
-import { GetSmallest } from "../GetSmallest/get-smallest.js"
+import { Generate } from "../Generate/generate.js"
+import { GetArray } from "../GetArray/get-array.js"
 
 interface Cluster{
     id: number,
@@ -22,7 +22,7 @@ export const KMeans = (
         for(let i = 0; i<k ; i++)
             clusters.push({
                 id: i + 1,
-                position: RandomInt(min , max+1),
+                position: Generate.int(min , max+1),
                 childs: []
             })
         let previousCluster: Cluster[] = []
@@ -48,7 +48,7 @@ export const KMeans = (
         }
         variationScores.push(variantSum);
     }
-    const smallestVariantScoreIndex: number[] = GetSmallest(variationScores, 1, true);
+    const smallestVariantScoreIndex: number[] = GetArray.smallest(variationScores, 1, true);
     return variations[smallestVariantScoreIndex[0]]
 }
 
@@ -71,7 +71,7 @@ const CalculteDistances = (clusters: Cluster[], arr: number[]): Cluster[] => {
             const distance: number = Math.abs(cluster.position - point);
             distances.push(distance);
         }
-        const nearestPointIndex: number[] = GetSmallest(distances, 1, true);
+        const nearestPointIndex: number[] = GetArray.smallest(distances, 1, true);
         //Add point to the cluster
         clusters[nearestPointIndex[0]].childs.push(point)
     })

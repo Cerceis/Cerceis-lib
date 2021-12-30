@@ -1,27 +1,25 @@
 {
-  "name": "cerceis-lib",
-  "version": "1.3.5",
-  "description": "Contains list of quality of life functions that is written in TypeScript and es6",
-  "main": "./dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Cerceis/LIB.git"
-  },
-  "type": "module",
-  "keywords": [
-    "Quality",
-    "of",
-    "Life",
-    "Typescript",
-    "functions"
-  ],
-  "author": "Cerceis",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Cerceis/LIB/issues"
-  },
-  "homepage": "https://github.com/Cerceis/LIB#readme"
+	"name": "cerceis-lib",
+	"version": "1.3.69",
+	"description": "Contains list of quality of life functions that is written in TypeScript and es6",
+	"main": "./dist/index",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Cerceis/LIB.git"
+	},
+	"type": "module",
+	"keywords": [
+		"Quality",
+		"of",
+		"Life",
+		"Typescript",
+		"functions"
+	],
+	"author": "Cerceis",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Cerceis/LIB/issues"
+	},
+	"homepage": "https://github.com/Cerceis/LIB#readme",
+	"files": ["dist/*"]
 }
