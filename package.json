@@ -1,13 +1,23 @@
 {
 	"name": "cerceis-lib",
-	"version": "1.3.69",
+	"version": "1.5.20",
 	"description": "Contains list of quality of life functions that is written in TypeScript and es6",
-	"main": "./dist/index",
+	"main": "dist/cjs/index.js",
+	"module": "dist/mjs/index.js",
+	"scripts": {
+		"debug": "node ./debug/debug.js",
+		"build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ./buildFix"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/mjs/index.js",
+			"require": "./dist/cjs/index.js"
+		}
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Cerceis/LIB.git"
 	},
-	"type": "module",
 	"keywords": [
 		"Quality",
 		"of",
@@ -21,5 +31,7 @@
 		"url": "https://github.com/Cerceis/LIB/issues"
 	},
 	"homepage": "https://github.com/Cerceis/LIB#readme",
-	"files": ["dist/*"]
+	"dependencies": {
+		"tslib": "^2.3.1"
+	}
 }

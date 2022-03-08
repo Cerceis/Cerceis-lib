@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.localeJpn = void 0;
+exports.localeJpn = {
+    min: (min) => `最小 ${min}`,
+    max: (max) => `最大 ${max}`,
+    isEmail: "無効なメールです",
+    required: "必要項目です",
+    alphanumeric: "半角英文字・数字を入れてください ( 0~9, a~Z )",
+    noSpecials: "特殊記号は使えません (!@$%...など)",
+    isUUIDv4: "無効なUUIDv4",
+    isSameAs: "再確認できませんでした"
+};

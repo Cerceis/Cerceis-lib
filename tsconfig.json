@@ -1,17 +1,8 @@
 {
-	"compilerOptions": {
-		"target": "es2017",
-		"module": "esnext",
-		"strict": true,
-		"jsx": "preserve",
-		"importHelpers": true,
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
-		"baseUrl": ".",
-		"outDir": "./dist"
-	}
+    "extends": "./tsconfig-base.json",
+    "compilerOptions": {
+        "module": "es6",
+        "outDir": "dist/mjs",
+        "target": "es2017",
+    }
 }
