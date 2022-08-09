@@ -66,6 +66,7 @@ export const FromObject = {
     }
 }
 
+/**Test
 const inputObj = {
     "001":{
         name: "Cerceis",
@@ -94,4 +95,5 @@ const inputObj = {
 }
 console.log(inputObj)
 console.log(FromObject.getDeepest(inputObj));
-console.log(FromObject.getDeepest(inputObj, true));
+console.log(FromObject.getDeepest(inputObj, true))
+*/
