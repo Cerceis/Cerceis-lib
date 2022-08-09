@@ -38,4 +38,24 @@ export declare const Generate: {
      * @param {AlphabateOptions} [options] Options
      */
     alphabate(len?: number, options?: AlphabateOptions): string;
+    /**
+     * @returns Current Date Time with a format of "YYYY-MM-DD""
+     */
+    currentDate(): string;
+    /**
+     * @returns Current Date Time with a format of "HH:mm:ss""
+     */
+    currentTime(): string;
+    /**
+     * @returns Current Date Time with a format of "YYYY-MM-DD HH:mm:ss""
+     */
+    currentDateTime(): string;
+    /**
+     * Generates and return list of date of specified day.
+     * Ex: All Sunday and Monday of 2022-01-01 to 2022-03-01
+     * @param f  From : YYYY-MM-DD
+     * @param t  To : YYYY-MM-DD
+     * @param days  number[] 0 ~ 6 Sunday ~ Saturday.
+     */
+    listOfDateOfDays(f: string, t: string, days: number[]): string[];
 };

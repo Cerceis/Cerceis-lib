@@ -78,6 +78,49 @@ export const Generate = {
             result += characterPool.charAt(Math.floor(Math.random() * charactersLength));
         }
         return result;
+    },
+    /**
+     * @returns Current Date Time with a format of "YYYY-MM-DD""
+     */
+    currentDate(): string{
+        const t: Date = new Date();
+        return `${t.getFullYear()}-${t.getMonth()+1}-${t.getDate()}`;
+    },
+    /**
+     * @returns Current Date Time with a format of "HH:mm:ss""
+     */
+    currentTime(): string{
+        const t: Date = new Date();
+        return `${String(t.getHours()).padStart(2,"0")}:${String(t.getMinutes()).padStart(2,"0")}:${String(t.getSeconds()).padStart(2,"0")}`;
+    },
+    /**
+     * @returns Current Date Time with a format of "YYYY-MM-DD HH:mm:ss""
+     */
+    currentDateTime(): string{
+        const t: Date = new Date();
+        return `${t.getFullYear()}-${t.getMonth()+1}-${t.getDate()} ${String(t.getHours()).padStart(2,"0")}:${String(t.getMinutes()).padStart(2,"0")}:${String(t.getSeconds()).padStart(2,"0")}`;
+    },
+    /**
+     * Generates and return list of date of specified day.
+     * Ex: All Sunday and Monday of 2022-01-01 to 2022-03-01
+     * @param f  From : YYYY-MM-DD
+     * @param t  To : YYYY-MM-DD
+     * @param days  number[] 0 ~ 6 Sunday ~ Saturday.
+     */
+    listOfDateOfDays(f: string, t: string, days: number[]){
+        let fromDate = new Date(f);
+        const toData = new Date(t);
+        let fromISO = fromDate.toISOString();
+        const toISO = toData.toISOString();
+        const rs: string[] = [];
+        while(true){
+            if(fromISO > toISO) break;
+            if(days.includes(fromDate.getDay()))
+                rs.push(fromISO.slice(0,10))
+            fromDate.setDate(fromDate.getDate()+1);
+            fromISO = fromDate.toISOString();
+        }
+        return rs;
     }
 }
 
