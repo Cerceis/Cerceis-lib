@@ -71,32 +71,3 @@ export const FromObject = {
         return multi ? rsMulti[deepest] : rs;
     }
 };
-const inputObj = {
-    "001": {
-        name: "Cerceis",
-        skills: {
-            "001": "Cooking",
-            "002": "Fishing",
-            "003": "Reading",
-            "specials": {
-                "skill": "Invisible",
-                "random": "PickPoket"
-            }
-        }
-    },
-    "002": {
-        name: "Bob",
-        skills: {
-            "001": "Hunting",
-            "002": "Fishing",
-            "003": "Fighting",
-            "specials": {
-                "skill": "Power up",
-                "random": "Heal"
-            }
-        }
-    }
-};
-console.log(inputObj);
-console.log(FromObject.getDeepest(inputObj));
-console.log(FromObject.getDeepest(inputObj, true));

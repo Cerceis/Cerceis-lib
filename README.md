@@ -28,28 +28,61 @@ const id = Generate.objectId();
 
 ## **Catalog still in progress!**
 
-|Name|Status|Documentation|Description|
-|--|--|--|--| 
-|ArrayToObject|Completed|o| Convert a 2-dimentional array ([[key, value], [key2, value2],...]) into Object.|
-|CopyToClipboard|Completed|o| Copy string into clipboard.
-|Delay|Completed|o| A simple async delay.
-|FromArray|Completed|o| Various functions to manipulate array. (Shuffle, intersect, smallest, random, etc...)
-|Generate|Completed|o| Generates various kinds of values.(objectId, array, alphanum..etc)
-|Is|Completed|o| A set of functions to check a various types.
-|KMeans|Completed|x| Group arrays of numbers into cluster with k-means algorithm.
-|Logger|Completed|o| A better console.log with color and timestamp included.
-|MinMaxScaler|Completed|o| Scale value down to range between 0 ~ 1.
-|Obfuscator|Completed|x| Obfuscate strings.
-|ObjectToArray|Completed|o| Convert Object into a 2-dimentional array ([[key, value], [key2, value2],...]).|
-|ParseCookie|Completed|x| Takes http cookie string as input and turn it into an object.
-|Prob|Completed|o| Probabilty related. Ex) Prob.roll 40%, will return true or false.
-|Sha256|Completed|x| Hash strings using SHA256.
-|TimeConverter|Completed|x| List of functions that convert time into a single unit. (Ex: 18:45:55 to miliseconds, etc)
-|Validator|Completed|o| A value validator, mostly used in form validation.
+- Delay: Quick async/await wrapper for delay. ex) await Delay(100).
+- FromArray: Collection of array methods.
+    - getRandom: Get random element from an array.
+    - getLargest: Get largest element from an array.
+    - getSmallest: Get smaller element from an array.
+    - getIntersect: Get intersection of two arrays.
+    - shuffle: Shuffle array.
+    - thanosSnap: Randomly remove half of the element.
+    - toObject: Convert array into object.
+- FromNum: Collection of Number methods.
+    - roll: Roll percentage. ex) roll(60), 60% will return true.
+    - diceRoll: Typical TRPG dice roll. ex) FromNum.diceRoll(3).D(20) = Roll 3 D20 Dice.
+    - minMaxScale: Scale number down to 0 ~ 1.
+    - unminMaxScale: Revert back to original value.
+- FromObject: Collection of Object methods.
+    - ObjectToArray: Convert object into Array.
+    - flatten: Flatten nested object.
+    - getDeepest: Get deepest entries of a nexted object.
+- FromString: Collection of String methods.
+    - copyToClipboard: Copy string to clipboard.
+    - replaceFirst: Replace first N number of letter with desired string.
+    - replaceLast: Replace last N number of letter with desired string.
+    - parseCookies: Parse http cookies into object.
+    - deepClean: Purify string, leaving only 0-9 a-z A-Z.
+    - count: Count the number of occurrences of the disired word/letter.
+- FromTime: Collection of time methods.
+    - jpnDayMap: Not a function. Map value of int to jpn day label
+    - format: Format date object into "YYYY-MM-DD HH:mm:ss".
+    - toMs: Convert time to ms.
+    - toSeconds: Convert time to seconds.
+    - toMinutes: Convert time to minutes.
+    - toHours: Convert time to hours.
+    - toDateTimeShortLocale: Convert time to short human readable date string.
+- Gacha: Gacha system.
+- Generate: Collection of data generation methods.
+    - alphanum: Generate Alphanumeric value.
+    - objectId: Generate objectId.
+    - int: Gneerate Integer.
+    - array: Array of selected element type.
+    - alphabate: Generate alphabate.
+    - currentDate: Current date "YYYY-MM-DD".
+    - currentTime: Current time "HH:mm:ss".
+    - currentDateTime: Current date time "YYYY-MM-DD HH:mm:ss".
+    - listOfDateOfDays: Generates and return list of date of specified day.
+- Is: Type check.
+- KMeans: Simplified K-means clustering method.
+- Logger: Coloful and advance logging wrapper.
+- Obfuscator: Obfuscate string.
+- Sha256: Sha256 algorithm.
+- Validator: Form validation (in-progress)
 
 ## Versions:
 |Version|Date|Description|
 |--|--|--|
+|2.0.1|2022-8-16| Major update, structure changed and added lot's of unfction. 
 |1.5.70|2022-8-9| Added FromObject, Moved ArrayToObject to FromArray, and ObjectToArray to FromObject.
 |1.5.62|2022-6-9| Added unM
 |1.5.30|2022-3-14| Added "Is", a function set to check various type.
