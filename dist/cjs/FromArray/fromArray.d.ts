@@ -3,9 +3,10 @@ export declare const FromArray: {
      * Returns a/multiple random element in an array.
      * @param arr Array of input numbers.
      * @param {number} [noOfResult=1] Number of results to return.
+     * @param returnIndex [returnIndex=false] Return the index instead.
      * @returns
      */
-    getRandom(arr: any[], noOfResult?: number): any[];
+    getRandom(arr: any[], noOfResult?: number, returnIndex?: boolean): any[];
     /**
      * Find and return the largest n numbers
      * @param numbers Array of numbers.
@@ -52,4 +53,25 @@ export declare const FromArray: {
         [key: string]: any;
         [key: number]: any;
     };
+    /**
+    * Split array into speficied ratio.
+    * ex) a = [1,2,3,4], split into [1,3]. returns = {1:[1], 2:[2,3,4]}
+    * ex) a = [1,2,3,4], split into [1,2,1]. returns = {1:[1], 2:[2,3], 3:[4]}
+    * ! If the the numbers of element can't fit into specified ratio,
+    * it will return as an array in the "extra" field.
+    * @param arr Array to split.
+    * @param arr Ratio to split into.
+    * @returns {[key: string]: any[]}
+    */
+    splitInto(arr: any[], ratio: number[]): {
+        [key: string]: any[];
+    };
+    /**
+     * A wrapper to console log an array, can take specified index range to print
+     * specific range, useful when logging large dataset.
+     * @param arr Array to Log.
+     * @param from Starting index (Included), default = 0
+     * @param to Ending index (Excluded), default = arr.length
+     */
+    log(arr: any[], from?: number, to?: number): void;
 };

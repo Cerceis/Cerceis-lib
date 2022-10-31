@@ -1,13 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Generate = void 0;
-/**
- * Generator that generates all kinds of values.
- * alphanum
- * objectId
- * int
- * array
- */
 exports.Generate = {
     /**
      * Generates a string consist of alphanumeric characters of given length
@@ -24,7 +17,7 @@ exports.Generate = {
         return result;
     },
     /**
-    * Generates random integer in a given range of (].
+    * Generates Object Id.
     * @returns
     */
     objectId() {
@@ -46,14 +39,20 @@ exports.Generate = {
         return result;
     },
     /**
-     *  Generates an array with random number as elemnt of desired length.
+     *  Generates an array with random integer as elemnt of desired length.
      *  @param len @required Length of the array.
      *  @returns Array of a given length
      */
-    array(len) {
+    array(len, ops = {}) {
+        var _a, _b;
+        const defaultOps = {
+            min: 0,
+            max: 11,
+        };
+        const mergedOps = Object.assign(Object.assign({}, defaultOps), ops);
         const rs = [];
         for (let i = 0; i < len; i++)
-            rs.push(this.int(0, 1000));
+            rs.push(this.int((_a = mergedOps.min) !== null && _a !== void 0 ? _a : 0, (_b = mergedOps.max) !== null && _b !== void 0 ? _b : 11));
         return rs;
     },
     /**

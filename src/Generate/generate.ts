@@ -6,7 +6,10 @@ import { AlphabateOptions } from "./types";
  * int
  * array
  */
-
+interface generateArrayOptions{
+    min?: number,
+    max?: number
+}
 export const Generate = {
     /**
      * Generates a string consist of alphanumeric characters of given length
@@ -21,7 +24,7 @@ export const Generate = {
         return result;
     },
      /**
-     * Generates random integer in a given range of (].
+     * Generates Object Id.
      * @returns 
      */
     objectId (): string{
@@ -43,14 +46,19 @@ export const Generate = {
         return result
     },
     /**
-     *  Generates an array with random number as elemnt of desired length.
+     *  Generates an array with random integer as elemnt of desired length.
      *  @param len @required Length of the array.
      *  @returns Array of a given length
      */
-    array(len: number){
+    array(len: number, ops:generateArrayOptions = {}){
+        const defaultOps: generateArrayOptions = {
+            min:0,
+            max: 11,
+        }
+        const mergedOps: generateArrayOptions = {...defaultOps, ...ops};
         const rs: number[] = [];
         for(let i = 0; i< len ; i++)
-            rs.push(this.int(0, 1000))
+            rs.push(this.int(mergedOps.min ?? 0, mergedOps.max ?? 11))
         return rs
     },
     /**
@@ -123,4 +131,3 @@ export const Generate = {
         return rs;
     }
 }
-

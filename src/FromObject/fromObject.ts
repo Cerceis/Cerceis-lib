@@ -5,6 +5,7 @@ export const FromObject = {
      * @param inputObj Input object.
      * @returns An 2 dimentional array with a type of [[key, value], [key2, value2],...]
      */
+    _isNumber: (x: number): boolean => Object.prototype.toString.call(x) === "[object Number]",
     ObjectToArray(inputObj: {[key:string | number]:any}): any[][]{
         return Object.keys(inputObj).map((key)=>{ return [String(key), inputObj[key]] });
     },
@@ -42,7 +43,7 @@ export const FromObject = {
      * @param multi return all result if multiple result is available.
      * @returns Deepest object
      */
-    getDeepest(obj: Object, multi: boolean = false): object | object[] {
+    getDeepest(obj: object, multi: boolean = false): object | object[] {
         if(Object.keys(obj).length === 0) return {};
         let deepest = 0;
         let rs: any = {};
@@ -63,5 +64,53 @@ export const FromObject = {
         }
         interRecursiveFunc(obj);
         return multi ? rsMulti[deepest] : rs;
+    },
+    /**
+     * Sum all the value of an object, support up to single nested object
+     * return the sum.
+     * @param obj input Object;
+     * @param field target field if inputs are nested object;
+     * @returns Sum
+    */
+    sumAll(obj: object, field: string = ""){
+        let sum = 0;
+        for(let prop in obj){
+            const t = field !== "" ? obj[prop as keyof object][field] : obj[prop as keyof object]
+            if(!this._isNumber(t)) throw `Value of property "${prop}" is not a number.`; 
+            sum += t;
+        }
+        return sum;
+    },
+    /**
+     * Find the max value of an object, support up to single nested object
+     * return the max.
+     * @param obj input Object;
+     * @param field target field if inputs are nested object;
+     * @returns Max value.
+    */
+    max(obj: object, field: string = ""){
+        let max = 0;
+        for(let prop in obj){
+            const t = field !== "" ? obj[prop as keyof object][field] : obj[prop as keyof object]
+            if(!this._isNumber(t)) throw `Value of property "${prop}" is not a number.`; 
+            if(t > max) max = t;
+        }
+        return max;
+    },
+    /**
+     * Find the min value of an object, support up to single nested object
+     * return the min.
+     * @param obj input Object;
+     * @param field target field if inputs are nested object;
+     * @returns Min value.
+    */
+    min(obj: object, field: string = ""){
+        let min = null;
+        for(let prop in obj){
+            const t = field !== "" ? obj[prop as keyof object][field] : obj[prop as keyof object]
+            if(!this._isNumber(t)) throw `Value of property "${prop}" is not a number.`; 
+            if(min === null || t < min) min = t;
+        }
+        return min;
     }
 }

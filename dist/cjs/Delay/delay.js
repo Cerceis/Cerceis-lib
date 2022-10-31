@@ -7,7 +7,9 @@ exports.Delay = void 0;
  */
 const Delay = (ms) => {
     return new Promise((resolve) => {
-        setTimeout(resolve, ms);
+        setTimeout(() => {
+            resolve();
+        }, ms);
     });
 };
 exports.Delay = Delay;

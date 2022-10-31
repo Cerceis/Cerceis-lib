@@ -24,7 +24,6 @@ export class Obfuscator{
         }
         return result
     }
-    
     /**
      * 
      * @param inputStr String to deobfuscate

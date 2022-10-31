@@ -5,6 +5,7 @@ export const FromObject = {
      * @param inputObj Input object.
      * @returns An 2 dimentional array with a type of [[key, value], [key2, value2],...]
      */
+    _isNumber: (x) => Object.prototype.toString.call(x) === "[object Number]",
     ObjectToArray(inputObj) {
         return Object.keys(inputObj).map((key) => { return [String(key), inputObj[key]]; });
     },
@@ -69,5 +70,58 @@ export const FromObject = {
         };
         interRecursiveFunc(obj);
         return multi ? rsMulti[deepest] : rs;
+    },
+    /**
+     * Sum all the value of an object, support up to single nested object
+     * return the sum.
+     * @param obj input Object;
+     * @param field target field if inputs are nested object;
+     * @returns Sum
+    */
+    sumAll(obj, field = "") {
+        let sum = 0;
+        for (let prop in obj) {
+            const t = field !== "" ? obj[prop][field] : obj[prop];
+            if (!this._isNumber(t))
+                throw `Value of property "${prop}" is not a number.`;
+            sum += t;
+        }
+        return sum;
+    },
+    /**
+     * Find the max value of an object, support up to single nested object
+     * return the max.
+     * @param obj input Object;
+     * @param field target field if inputs are nested object;
+     * @returns Max value.
+    */
+    max(obj, field = "") {
+        let max = 0;
+        for (let prop in obj) {
+            const t = field !== "" ? obj[prop][field] : obj[prop];
+            if (!this._isNumber(t))
+                throw `Value of property "${prop}" is not a number.`;
+            if (t > max)
+                max = t;
+        }
+        return max;
+    },
+    /**
+     * Find the min value of an object, support up to single nested object
+     * return the min.
+     * @param obj input Object;
+     * @param field target field if inputs are nested object;
+     * @returns Min value.
+    */
+    min(obj, field = "") {
+        let min = null;
+        for (let prop in obj) {
+            const t = field !== "" ? obj[prop][field] : obj[prop];
+            if (!this._isNumber(t))
+                throw `Value of property "${prop}" is not a number.`;
+            if (min === null || t < min)
+                min = t;
+        }
+        return min;
     }
 };

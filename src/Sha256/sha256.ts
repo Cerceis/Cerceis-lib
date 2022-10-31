@@ -148,7 +148,6 @@ export const Sha256 = (inputStr: string) => {
     messageBin += "1" //Separator
     messageBin = messageBin.padEnd(finalLength-64, "0") //padding of 0 until 448 bits
     messageBin += messageLengthBin //Remaining 64 with length of the message with start padding of 0.  
-    console.log(messageBin)
     for (let i = 0; i < blockCount; i++) {
         let messageChunks = messageBin.slice(i * 512, i * 512 + 512)
         //Add padding to last block

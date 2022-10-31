@@ -6,6 +6,10 @@ import { AlphabateOptions } from "./types";
  * int
  * array
  */
+interface generateArrayOptions {
+    min?: number;
+    max?: number;
+}
 export declare const Generate: {
     /**
      * Generates a string consist of alphanumeric characters of given length
@@ -14,7 +18,7 @@ export declare const Generate: {
      */
     alphanum(len?: number): string;
     /**
-    * Generates random integer in a given range of (].
+    * Generates Object Id.
     * @returns
     */
     objectId(): string;
@@ -27,11 +31,11 @@ export declare const Generate: {
      */
     int(min: number, max: number): number;
     /**
-     *  Generates an array with random number as elemnt of desired length.
+     *  Generates an array with random integer as elemnt of desired length.
      *  @param len @required Length of the array.
      *  @returns Array of a given length
      */
-    array(len: number): number[];
+    array(len: number, ops?: generateArrayOptions): number[];
     /**
      * Generates random alphabate of specified length.
      * @param {number} [len=5] Length of the string. default = 5,
@@ -59,3 +63,4 @@ export declare const Generate: {
      */
     listOfDateOfDays(f: string, t: string, days: number[]): string[];
 };
+export {};

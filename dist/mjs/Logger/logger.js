@@ -53,14 +53,18 @@ export const Logger = {
         process.stdout.clearLine(1);
         process.stdout.write(`[${barTextArray.join("")}] ${percentage}/100 \n`);
         if(percentage === 100) this.progressInit = false;
+        if(percentage === 100) this.progressInit = false;
+        if(percentage === 100) this.progressInit = false;
+        if(percentage === 100) this.progressInit = false;
     }
     */
     /**
      * *Only works with Node.js environment!
      * Depended on the fs module.
      * @param path Absolute path of the log file
-
+    
     writeLog(path: string, msg: string){
+        import { readFileSync ,writeFileSync, statSync } from "fs";
         if(!statSync || !readFileSync || !writeFileSync) throw "Not supported";
         try{
             if(statSync(path)){

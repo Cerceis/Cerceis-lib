@@ -3,13 +3,17 @@ export const FromArray = {
      * Returns a/multiple random element in an array.
      * @param arr Array of input numbers.
      * @param {number} [noOfResult=1] Number of results to return.
+     * @param returnIndex [returnIndex=false] Return the index instead.
      * @returns 
      */
-    getRandom(arr: any[], noOfResult: number = 1): any[]{
+    getRandom(arr: any[], noOfResult: number = 1, returnIndex: boolean = false): any[]{
         if (!Array.isArray(arr)) throw "Input must be an array"
         const result = []
-        for (let i = 0; i < noOfResult; i++)
-            result.push(arr[Math.floor(Math.random() * arr.length)]);
+        for (let i = 0; i < noOfResult; i++){
+            if(returnIndex) result.push(Math.floor(Math.random() * arr.length));
+            else result.push(arr[Math.floor(Math.random() * arr.length)]);
+        }
+            
         return result
     },
     /**
@@ -123,5 +127,47 @@ export const FromArray = {
         let tmpObj: { [key: string | number]: any } = {}
         arr.forEach(e => tmpObj[e[0]] = e[1])
         return tmpObj
-    }
+    },
+     /**
+     * Split array into speficied ratio.
+     * ex) a = [1,2,3,4], split into [1,3]. returns = {1:[1], 2:[2,3,4]}
+     * ex) a = [1,2,3,4], split into [1,2,1]. returns = {1:[1], 2:[2,3], 3:[4]}
+     * ! If the the numbers of element can't fit into specified ratio,
+     * it will return as an array in the "extra" field.
+     * @param arr Array to split.
+     * @param arr Ratio to split into.
+     * @returns {[key: string]: any[]}
+     */
+    splitInto(arr: any[] ,ratio: number[]): {[key: string]: any[]}{
+        if(ratio.length === 0) return {1: arr};
+        const filteredRatio = ratio.filter(r => r !== 0 && !isNaN(r));
+        const lengthPerUnit: number = Math.floor(1/(filteredRatio.reduce((a,b)=>a+b)) * arr.length);
+        const rs: {[key: string]: any[]} = {};
+        let currentGroup = 1;
+        let lastVisitedLength: number = 0;
+        let currentTotalLength: number = 0;
+        for(let i = 0; i < ratio.length; i++){
+            lastVisitedLength = currentTotalLength + (ratio[i] * lengthPerUnit);
+            rs[currentGroup] = arr.slice(currentTotalLength, lastVisitedLength);
+            currentTotalLength += rs[currentGroup].length;
+            currentGroup ++;
+        }
+        let extra = [];
+        if(lastVisitedLength < arr.length){
+            extra = arr.slice(-(arr.length-lastVisitedLength))
+            rs["extra"] = extra
+        }     
+        return rs;
+    },
+    /**
+     * A wrapper to console log an array, can take specified index range to print
+     * specific range, useful when logging large dataset.
+     * @param arr Array to Log.
+     * @param from Starting index (Included), default = 0
+     * @param to Ending index (Excluded), default = arr.length
+     */
+    log(arr: any[], from: number = 0, to:number = arr.length): void{
+        for(let i = from; i < to; i++) console.log(arr[i])
+    },
 }
+

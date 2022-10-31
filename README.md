@@ -37,15 +37,26 @@ const id = Generate.objectId();
     - shuffle: Shuffle array.
     - thanosSnap: Randomly remove half of the element.
     - toObject: Convert array into object.
+    - log: A wrapper to console log an array, can take specified index range to print specific range, useful when logging large dataset.
 - FromNum: Collection of Number methods.
     - roll: Roll percentage. ex) roll(60), 60% will return true.
     - diceRoll: Typical TRPG dice roll. ex) FromNum.diceRoll(3).D(20) = Roll 3 D20 Dice.
     - minMaxScale: Scale number down to 0 ~ 1.
     - unminMaxScale: Revert back to original value.
+    - sum: Literally Sum up a list of numbers.
+    - softMax: Converts a vector of K real numbers into a probability distribution of K possible outcomes. 
+    - mean: Return the mean of an list of numbers.
+    - toRomanNumeral: Convert numeric values into Roman Numeral string.
+    - sigmoid: A sigmoid function is a bounded, differentiable, real function that is defined for all real input values and has a non-negative derivative at each point and exactly one inflection point. 
+    - relu: ReLU (Rectified Linear Unit function)
+    - softPlus: Soft Plus function
 - FromObject: Collection of Object methods.
     - ObjectToArray: Convert object into Array.
     - flatten: Flatten nested object.
     - getDeepest: Get deepest entries of a nexted object.
+    - sumAll: Sum all the value in an object.
+    - min: Find the min value in an object.
+    - max: Find the max value in an object.
 - FromString: Collection of String methods.
     - copyToClipboard: Copy string to clipboard.
     - replaceFirst: Replace first N number of letter with desired string.
@@ -74,7 +85,7 @@ const id = Generate.objectId();
     - listOfDateOfDays: Generates and return list of date of specified day.
 - Is: Type check.
 - KMeans: Simplified K-means clustering method.
-- Logger: Coloful and advance logging wrapper.
+- Logger: Coloful and advance console.log() wrapper.
 - Obfuscator: Obfuscate string.
 - Sha256: Sha256 algorithm.
 - Validator: Form validation (in-progress)
@@ -82,9 +93,10 @@ const id = Generate.objectId();
 ## Versions:
 |Version|Date|Description|
 |--|--|--|
+|2.1.0|2022-10-5| Added multiple mathematical functions and fixed memory leak on Delay on some browser.
 |2.0.1|2022-8-16| Major update, structure changed and added lot's of unfction. 
 |1.5.70|2022-8-9| Added FromObject, Moved ArrayToObject to FromArray, and ObjectToArray to FromObject.
-|1.5.62|2022-6-9| Added unM
+|1.5.62|2022-6-9| Added Num
 |1.5.30|2022-3-14| Added "Is", a function set to check various type.
 |1.5.24|2022-3-08| Added Prob and fixed various bugs.
 |1.5|2022-2-16| Added Delay & various fixes. Now supports both CJS and MJS.

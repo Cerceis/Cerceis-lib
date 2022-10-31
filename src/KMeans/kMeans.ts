@@ -37,7 +37,7 @@ export const KMeans = (
         }
         variations.push(clusters)
     }
-    //Determine best variactions
+    //Determine best variation
     if(variations.length === 1) return variations[0]
     
     const variationScores: number[] = [];
