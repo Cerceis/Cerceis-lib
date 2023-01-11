@@ -1,5 +1,5 @@
 export const Is = {
-    object: ( x: Object ): boolean => Object.prototype.toString.call(x) === "[object Object]",
+    object: ( x: any ): boolean => Object.prototype.toString.call(x) === "[object Object]",
     emptyObject: ( x: Object ): boolean =>{
         if(!Is.object(x)) return false;
         for(let i in x) return false;
@@ -11,10 +11,10 @@ export const Is = {
         for(let i in x) return false;
         return true;
     },
-    number: (x: number): boolean => Object.prototype.toString.call(x) === "[object Number]",
-    boolean: ( x: boolean ): boolean => Object.prototype.toString.call(x) === "[object Boolean]",
-    array:(x:any[]): boolean => Array.isArray(x),
-    null:(x: null): boolean => x === null,
+    number: (x: any): boolean => Object.prototype.toString.call(x) === "[object Number]",
+    boolean: ( x: any ): boolean => Object.prototype.toString.call(x) === "[object Boolean]",
+    array:(x:any): boolean => Array.isArray(x),
+    null:(x: any): boolean => x === null,
     undefined:(x: undefined): boolean => x === undefined,
     falseValue:(x: any): boolean =>{
         let emptyCount: number = 0;
@@ -36,13 +36,13 @@ export const Is = {
         if(!alphanumeric.test(x)) return false;
         return true;
     },
-    isUUIDv4:(x: string): boolean => {
+    UUIDv4:(x: string): boolean => {
 		if(!x) return false;
         const uuidv4 = /^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$/i;
         if(!uuidv4.test(x)) return false;
         return true;
 	},
-	isSameAs: (x: any, y: any): boolean => {
+	sameAs: (x: any, y: any): boolean => {
         if(x === y) return true;
         return false;
 	},
@@ -59,4 +59,7 @@ export const Is = {
         if(format.test(x)) return false;
         return true;
     },
+    aFunction(x: any): boolean {
+        return Object.prototype.toString.call(x) == '[object Function]';
+    }
 }

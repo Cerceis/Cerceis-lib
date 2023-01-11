@@ -27,7 +27,9 @@ const id = Generate.objectId();
 ****To make things more organized, functions are separated into their respective parent, simply import the parent to use them.****
 
 ## **Catalog still in progress!**
-
+- Constant: database of various category.
+    - gemStones: List of Gem stones name.
+    - colors: List of Color's name.
 - Delay: Quick async/await wrapper for delay. ex) await Delay(100).
 - FromArray: Collection of array methods.
     - getRandom: Get random element from an array.
@@ -50,6 +52,8 @@ const id = Generate.objectId();
     - sigmoid: A sigmoid function is a bounded, differentiable, real function that is defined for all real input values and has a non-negative derivative at each point and exactly one inflection point. 
     - relu: ReLU (Rectified Linear Unit function)
     - softPlus: Soft Plus function
+    - toNearest: Round number to nearest specified number. 
+    - toShortReadable: Convert number into short readable string. Ex) 1000 -> 1k, 1,500,000 -> 1.5m
 - FromObject: Collection of Object methods.
     - ObjectToArray: Convert object into Array.
     - flatten: Flatten nested object.
@@ -72,11 +76,28 @@ const id = Generate.objectId();
     - toMinutes: Convert time to minutes.
     - toHours: Convert time to hours.
     - toDateTimeShortLocale: Convert time to short human readable date string.
+- FromVector: Vector manipulation.
+    - create: Create a vector object.
+        - add
+        - limit
+        - div
+        - mult
+        - heading
+        - sub
+        - setMag
+        - magSq
+        - mag
+        - normalize
+        - copy
+        - dist
+        - toVector2
+        - toVector3
 - Gacha: Gacha system.
 - Generate: Collection of data generation methods.
     - alphanum: Generate Alphanumeric value.
     - objectId: Generate objectId.
-    - int: Gneerate Integer.
+    - int: Generate Integer.
+    - random: Generate random number of given range.
     - array: Array of selected element type.
     - alphabate: Generate alphabate.
     - currentDate: Current date "YYYY-MM-DD".
@@ -93,6 +114,9 @@ const id = Generate.objectId();
 ## Versions:
 |Version|Date|Description|
 |--|--|--|
+|2.2.3|2023-1-11| Added FromNum.toShortReadable.
+|2.2.2|2023-1-6| Added Constant.
+|2.2.0|2023-1-5| Added some more functions, and mainly new "FromVector" that can do various vector manipulation.
 |2.1.0|2022-10-5| Added multiple mathematical functions and fixed memory leak on Delay on some browser.
 |2.0.1|2022-8-16| Major update, structure changed and added lot's of unfction. 
 |1.5.70|2022-8-9| Added FromObject, Moved ArrayToObject to FromArray, and ObjectToArray to FromObject.

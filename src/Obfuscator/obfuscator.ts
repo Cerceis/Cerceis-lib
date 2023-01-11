@@ -115,7 +115,7 @@ export class Obfuscator{
         }
     }
 
-    public obfuscatev3(inputStr: string, key: string = this._randomKey()): string {
+    public obfuscatev3(inputStr: string, key: string): string {
         const keyValues: number[] = [];
         let currentKeyValue: number = 0;
         let hex: string = ""
@@ -141,7 +141,7 @@ export class Obfuscator{
         return hex
     }
 
-    public deobfuscatev3(inputStr: string, key: string = this._randomKey()): string {
+    public deobfuscatev3(inputStr: string, key: string): string {
         const keyValues: number[] = [];
         let currentKeyValue: number = 0;
         let result: string = ""
@@ -169,8 +169,6 @@ export class Obfuscator{
         }
         return result
     }
-
-
     
 }
 export const obfuscator = new Obfuscator()

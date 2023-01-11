@@ -116,7 +116,7 @@ class Obfuscator {
             return "Errored";
         }
     }
-    obfuscatev3(inputStr, key = this._randomKey()) {
+    obfuscatev3(inputStr, key) {
         const keyValues = [];
         let currentKeyValue = 0;
         let hex = "";
@@ -141,7 +141,7 @@ class Obfuscator {
         }
         return hex;
     }
-    deobfuscatev3(inputStr, key = this._randomKey()) {
+    deobfuscatev3(inputStr, key) {
         const keyValues = [];
         let currentKeyValue = 0;
         let result = "";

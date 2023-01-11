@@ -1,3 +1,4 @@
+export { Constant } from './Constant/constant.js';
 export { Delay } from './Delay/delay.js';
 export { Generate } from './Generate/generate.js';
 export { Is } from './Is/is.js';
@@ -5,7 +6,8 @@ export { FromArray } from './FromArray/fromArray.js';
 export { FromNum } from './FromNum/fromNum.js';
 export { FromObject } from './FromObject/fromObject.js';
 export { FromString } from './FromString/fromString.js';
-export { FromTime } from './FromTime/FromTime.js';
+export { FromTime } from './FromTime/fromTime.js';
+export { FromVector } from './FromVector/fromVector.js';
 export { Gacha } from './Gacha/gacha.js';
 export { KMeans } from './KMeans/kMeans.js';
 export { Logger } from './Logger/logger.js';

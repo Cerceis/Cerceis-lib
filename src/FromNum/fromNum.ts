@@ -140,6 +140,47 @@ export const FromNum = {
     softPlus(xs: number[]): number[] {
         return xs.map(x => Math.log(1 + Math.exp(x)));
     },
+    /**
+     * Round number to nearest specified number.
+     * @param n Number to round
+     * @param r Number to round up to
+     * @returns Rounded number
+     */
+    toNearest(n: number, r:number) {
+        return Math.round(n / r) * r;
+    },
+    /**
+     * Convert number into short readable string.
+     * ! Does not round number to nearest when decimal is cutted.
+     * @param n Input number
+     * @param decimal Default = 2, number of decimal to retain.
+     * @param maxLen Default = 3, maximum length allowed, overwrites decimal. Ex) 240.5k -> 240k even if decimal is set to 1.
+     * @returns Shorten string.
+     */
+    toShortReadable(n: number, decimal: number = 2, maxLen: number = 3): string {
+        const availableSymbol: any = {
+            "": 0,
+            "k": 1000,
+            "m": 1_000_000,
+        }
+        let suitableSymbol = "";
+        for(let symbol in availableSymbol) {
+            if(availableSymbol[symbol] > n ) break;
+            suitableSymbol = symbol    
+        }
+        if(suitableSymbol === "") return `${n}`;
+        const divider = availableSymbol[suitableSymbol];
+        const rs = (n/divider).toFixed(decimal)
+        const rsArr = rs.split("");
+        // +1 is for the ".", the added value ignores that.
+        while(rsArr.length > maxLen + 1)
+            rsArr.pop();
+        // Remove trailing 0s
+        while(rsArr.at(-1) === "0")
+            rsArr.pop();
+        // Sometimes the last digit will be ".", remove that
+        if(rsArr.at(-1) === ".") rsArr.pop();
+        const finalString = rsArr.join("");
+        return `${finalString}${suitableSymbol}`;
+    }
 }
-
-

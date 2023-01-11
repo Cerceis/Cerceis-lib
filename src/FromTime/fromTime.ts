@@ -110,6 +110,7 @@ export const FromTime = {
     toDateTimeShortLocale(input: string, locale: string = "jpn"): string{
         const date: Date = new Date(input);
         const currentDate: Date = new Date();
+        if(!currentDate) return input;
     
         if(currentDate.getFullYear() !== date.getFullYear()){
             return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`
@@ -133,6 +134,9 @@ export const FromTime = {
         }
     },
 }
+
+
+
 
 export class cDate{
 

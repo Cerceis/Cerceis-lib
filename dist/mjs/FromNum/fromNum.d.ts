@@ -90,4 +90,20 @@ export declare const FromNum: {
     * @returns number[]
     */
     softPlus(xs: number[]): number[];
+    /**
+     * Round number to nearest specified number.
+     * @param n Number to round
+     * @param r Number to round up to
+     * @returns Rounded number
+     */
+    toNearest(n: number, r: number): number;
+    /**
+     * Convert number into short readable string.
+     * ! Does not round number to nearest when decimal is cutted.
+     * @param n Input number
+     * @param decimal Default = 2, number of decimal to retain.
+     * @param maxLen Default = 3, maximum length allowed, overwrites decimal. Ex) 240.5k -> 240k even if decimal is set to 1.
+     * @returns Shorten string.
+     */
+    toShortReadable(n: number, decimal?: number, maxLen?: number): string;
 };

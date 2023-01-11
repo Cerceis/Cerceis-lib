@@ -19,7 +19,7 @@ export declare class Obfuscator {
     private readonly _stringSwapPair;
     obfuscatev2(inputStr: string): string;
     deobfuscatev2(inputStr: string): string;
-    obfuscatev3(inputStr: string, key?: string): string;
-    deobfuscatev3(inputStr: string, key?: string): string;
+    obfuscatev3(inputStr: string, key: string): string;
+    deobfuscatev3(inputStr: string, key: string): string;
 }
 export declare const obfuscator: Obfuscator;

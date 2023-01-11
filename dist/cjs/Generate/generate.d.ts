@@ -31,6 +31,13 @@ export declare const Generate: {
      */
     int(min: number, max: number): number;
     /**
+     * Generate random number.
+     * @param min
+     * @param max
+     * @returns
+     */
+    random(min: number, max: number): number;
+    /**
      *  Generates an array with random integer as elemnt of desired length.
      *  @param len @required Length of the array.
      *  @returns Array of a given length
@@ -62,5 +69,14 @@ export declare const Generate: {
      * @param days  number[] 0 ~ 6 Sunday ~ Saturday.
      */
     listOfDateOfDays(f: string, t: string, days: number[]): string[];
+    /**
+     * Fast UUID generator, RFC4122 version 4 compliant.
+     * Copied and rewritted from the below. Thanks for such
+     * elegant code.
+     * @author Jeff Ward (jcward.com).
+     * @license MIT license
+     * @link http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript/21963136#21963136
+     **/
+    uuidv4(): string;
 };
 export {};
