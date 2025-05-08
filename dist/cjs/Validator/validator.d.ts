@@ -5,7 +5,7 @@ interface Error {
     labelEn?: string;
     labelJpn?: string;
 }
-export declare type Locale = "eng" | "jpn";
+export type Locale = "eng" | "jpn";
 export declare class Validator {
     private locale;
     inputValue: any;
@@ -27,7 +27,7 @@ export declare class Validator {
     static isDefined: (x: any) => boolean;
     static isUndefined: (x: any) => boolean;
     static isArray: (arg: any) => arg is any[];
-    static isString: (x: any) => boolean;
+    static isString: (x: any) => x is string | String;
     static isObject: (x: {}) => boolean;
     static isNumber: (x: number) => boolean;
     static isBoolean: (x: boolean) => boolean;

@@ -50,8 +50,7 @@ export declare const FromArray: {
      * @returns Object
      */
     toObject(arr: any[][]): {
-        [key: string]: any;
-        [key: number]: any;
+        [key: string | number]: any;
     };
     /**
     * Split array into speficied ratio.

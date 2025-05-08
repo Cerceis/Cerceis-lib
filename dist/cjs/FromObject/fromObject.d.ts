@@ -7,8 +7,7 @@ export declare const FromObject: {
      */
     _isNumber: (x: number) => boolean;
     ObjectToArray(inputObj: {
-        [key: string]: any;
-        [key: number]: any;
+        [key: string | number]: any;
     }): any[][];
     /**
      * Flatten a multi level object.

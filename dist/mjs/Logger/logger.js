@@ -1,6 +1,3 @@
-//if (typeof window === 'undefined' && typeof process === 'object')
-//import { readFileSync ,writeFileSync, statSync } from "fs";
-//import * as readline from 'readline';
 const Colors = {
     "Red": 31,
     "Green": 32,
@@ -33,49 +30,36 @@ export const Logger = {
         console.log(`%s\x1b[32m%s\x1b[0m`, `[LOG] - ${(new Date).toLocaleString()}    `, msg);
     },
     /**
-     * This function only works in nodejs.
-     * To reset the bar, Set it to 100% once.
+     *
+     * @param progress Progress in float from 0 to 1 ex 0.5 = 50%
      */
-    /*
-    progressInit: false,
-    progress(percentage: number, barLen: number = 20){
-        // Why is the promise not included in the library.
-        readline.cursorTo(process.stdout,0);
-        const barToFill = Math.round(percentage/100 * barLen);
-        const barTextArray: string[] = new Array(barToFill).fill("█");
-        while(barTextArray.length < barLen)
-            barTextArray.push("░");
-        if(!this.progressInit){
-            process.stdout.write("\n");
-            this.progressInit = true;
+    nodeProgress(current, total, sameLine = false) {
+        const percent = current / total;
+        const barLen = 20;
+        const filledLen = Math.round(barLen * percent);
+        const emptyLen = barLen - filledLen;
+        let bar = "";
+        if (filledLen > 1) {
+            bar += "❤️".repeat(filledLen - 1);
+            bar += "🐰";
         }
-        process.stdout.moveCursor(0, -1); // up one line
-        process.stdout.clearLine(1);
-        process.stdout.write(`[${barTextArray.join("")}] ${percentage}/100 \n`);
-        if(percentage === 100) this.progressInit = false;
-        if(percentage === 100) this.progressInit = false;
-        if(percentage === 100) this.progressInit = false;
-        if(percentage === 100) this.progressInit = false;
-    }
-    */
-    /**
-     * *Only works with Node.js environment!
-     * Depended on the fs module.
-     * @param path Absolute path of the log file
-    
-    writeLog(path: string, msg: string){
-        import { readFileSync ,writeFileSync, statSync } from "fs";
-        if(!statSync || !readFileSync || !writeFileSync) throw "Not supported";
-        try{
-            if(statSync(path)){
-                let tmp = (readFileSync(path)).toString();
-                tmp += `[${(new Date).toLocaleString()}] - ${msg}\n`;
-                writeFileSync(path, tmp);
-            }
-        }catch(err: any){
-            if(err && (err.syscall === 'stat' && err.code === 'ENOENT'))
-                writeFileSync(path,`[${(new Date).toLocaleString()}] - ${msg}\n`);
+        else {
+            bar += "🐰";
+        }
+        if (emptyLen > 0) {
+            bar += "  ".repeat(emptyLen - 1);
+            bar += "🥕";
+        }
+        const percentText = `${Math.round(percent * 100)}%`;
+        if (sameLine) {
+            process.stdout.clearLine(0); // Clear the current line
+            process.stdout.cursorTo(0); // Move the cursor to the beginning of the line
+            process.stdout.write(`[${bar}] ${percentText}`);
+            if (percent >= 1)
+                process.stdout.write('\n');
+        }
+        else {
+            console.log(`[${bar}] ${percentText}`);
         }
     }
-    */
 };

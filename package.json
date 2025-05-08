@@ -1,11 +1,11 @@
 {
 	"name": "cerceis-lib",
-	"version": "2.2.3",
+	"version": "2.2.4",
 	"description": "Contains list of quality of life functions that is written in TypeScript and es6",
 	"main": "dist/cjs/index.js",
 	"module": "dist/mjs/index.js",
 	"scripts": {
-        "dev": "nodemon ./src/FromTime/fromTime.ts",
+		"dev": "nodemon ./src/Logger/logger",
 		"build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ./buildFix"
 	},
 	"exports": {
@@ -22,13 +22,13 @@
 		"Quality",
 		"of",
 		"Life",
-        "javascript",
-        "array",
-        "date",
-        "time",
-        "number",
-        "gacha",
-        "probability",
+		"javascript",
+		"array",
+		"date",
+		"time",
+		"number",
+		"gacha",
+		"probability",
 		"Typescript",
 		"functions"
 	],
@@ -39,10 +39,11 @@
 	},
 	"homepage": "https://github.com/Cerceis/LIB#readme",
 	"dependencies": {
+		"user": "^0.0.0"
 	},
 	"devDependencies": {
-        "nodemon": "^2.0.19",
-        "tslib": "^2.3.1",
-		"@types/node": "^17.0.23"
+		"@types/node": "^17.0.23",
+		"nodemon": "^2.0.19",
+		"tslib": "^2.3.1"
 	}
 }
