@@ -1,6 +1,6 @@
 {
 	"name": "cerceis-lib",
-	"version": "2.2.4",
+	"version": "2.4.6",
 	"description": "Contains list of quality of life functions that is written in TypeScript and es6",
 	"main": "dist/cjs/index.js",
 	"module": "dist/mjs/index.js",
